@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Empleado</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-button">⬅️ Regresar</a>
+        <h1 class="title">👷‍♂️ Registrar Empleado</h1> 
+        <a href="consultar-empleados" class="btn-gray">👥 Consultar Empleados</a>
+
+        <form id="register-employee-form">
+            
+            <div class="form-row">
+                   <div class="form-group">
+        <label for="codigo">Código</label>
+        <input type="text" id="codigo" name="codigo" placeholder="CÓDIGO DE EMPLEADO" class="uppercase" required>
+    </div>
+
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="INGRESE NOMBRE " class="uppercase" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="correo">Correo</label>
+                    <input type="email" id="correo" name="correo" placeholder="INGRESE CORREO" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="area_id">Área</label>
+                    <select id="area_id" name="area_id" required>
+                        <option value="">SELECCIONE UN AREA</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha_ingreso">Fecha de Ingreso</label>
+                    <input type="date" id="fecha_ingreso" name="fecha_ingreso" required>
+                </div>
+            </div>
+
+            <div class="button-group">
+            <button type="submit" class="btn">💾 Registrar</button>
+            
+  </div>
+  
+        </form>
+    </div>
+    <script src="registrar-empleado.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            const userData = await checkAuth();
+            if (!userData) {
+                window.location.href = "/login.html";
+            }
+        });
+    </script>
+
+</body>
+</html>

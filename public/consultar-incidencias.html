@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Consultar Incidencias</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <a href="/registrar-incidencia" class="back-button">⬅️ Regresar</a>  
+
+    <h1 class="title">🚨 Incidencias Registradas</h1>
+
+    <div class="search-bar">
+        <label for="search">Buscar:</label>
+        <input type="text" id="search" placeholder="Buscar por activo o empleado...">
+        <button id="search-button" class="btn">🔎 Buscar</button>
+        <button id="btn-exportar-todo">📥 Exportar PDF + Excel</button>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+
+    </div>
+    
+<div class="filter-bar" style="margin-top: 1rem; display: flex; gap: 1rem;">
+  <div>
+    <label for="filtro-area">Área:</label><br>
+    <select id="filtro-area">
+      <option value="">Todas las áreas</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="filtro-estado">Estado:</label><br>
+    <select id="filtro-estado">
+      <option value="">Todos</option>
+      <option value="amarillo">No solucionados</option>
+      <option value="verde">Solucionados</option>
+    </select>
+  </div>
+</div>
+
+
+    <table class="data-table">
+        <thead>
+            <tr>
+              <th>Activo</th>
+              <th>Area</th>
+                <th>Empleado</th>
+                <th>Descripción de la incidencia</th>
+                <th>Fecha de registro</th>
+                <th>Fecha de solución</th>
+
+                <th>Mantenimiento</th>
+                <th>Estado</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="6" style="text-align: center;">Cargando incidencias...</td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/consultar-incidencias.js"></script>
+  <script src="/auth.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
+
+  
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta de Empleados</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="/auth.js"></script>
+  <script defer src="consultar-empleados.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="container">
+    <a href="registrar-empleado.html" class="back-button">⬅️ Regresar</a>
+    <h1 class="title">👥 Consulta de Empleados</h1>
+    
+
+    <input type="text" id="buscador" placeholder="Buscar por nombre o ID..." class="input"><button id="btn-exportar-todo" class="btn-export">
+      📥 Exportar PDF + Excel</button> 
+    <br>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
+
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Código</th>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Fecha Ingreso</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-empleados"></tbody>
+    </table>
+  </div>
+</body>
+</html>
